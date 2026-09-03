@@ -35,11 +35,11 @@ export const employees = [
     credentials: "Marine Chief Engineer",
     photo: "/employees/aruna.jpg",
     phones: [
-      { label: "Mobile (Office)", number: "+94 77 166 0436", type: "cell" },
+      { label: "Mobile (Office)", number: "+94 74 415 2966", type: "cell" },
       { label: "Mobile (Personal)", number: "+94 77 774 3023", type: "cell" },
       { label: "Office", number: "+94 11 268 2692", type: "work" },
     ],
-    whatsapp: "94771660436", // his office mobile
+    whatsapp: "94744152966", // his office mobile
     email: "chiefeng@dpvoffshore.lk",
     // websites: [{ label: "Website", url: "https://..." }],  // optional override
     // address: {             // optional override of the company address
@@ -51,6 +51,21 @@ export const employees = [
     //   country: "Sri Lanka",
     //   mapUrl: "",
     // },
+  },
+
+  {
+    slug: "nethupa",
+    firstName: "Nethupa",
+    lastName: "Binath",
+    title: "Document Controller",
+    credentials: "",
+    photo: "/employees/nethupa.jpg",
+    phones: [
+      { label: "Mobile (Office)", number: "+94 74 415 2963", type: "cell" },
+      { label: "Mobile", number: "+94 77 531 5354", type: "cell" },
+    ],
+    whatsapp: "94775315354",
+    email: "cmb@dpvoffshore.com",
   },
 
   // ---- copy from here to add a new person ----
