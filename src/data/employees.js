@@ -20,6 +20,9 @@
 //    - prefix:   OPTIONAL honorific ("Mr." / "Ms.") saved into the contact.
 //    - credentials: OPTIONAL qualifications line under the job title.
 //    - email:    OPTIONAL. Leave "" and the email row is hidden.
+//    - emails:   OPTIONAL. Use instead of "email" when someone has
+//               more than one address: ["a@x.lk", "b@x.com"]. Each
+//               becomes its own tappable row, in this order.
 //    - websites: OPTIONAL override. Leave it out and the company
 //                websites from company.js are used.
 //    - address:  OPTIONAL override of the company address.
@@ -32,14 +35,14 @@ export const employees = [
     firstName: "Aruna",
     lastName: "Rajapakse",
     title: "Technical Director",
-    credentials: "Marine Chief Engineer",
+    credentials: "Senior Marine Chief Engineer, 1st Class (UK)",
     photo: "/employees/aruna.jpg",
     phones: [
       { label: "Mobile (Office)", number: "+94 74 415 2966", type: "cell" },
       { label: "Office", number: "+94 11 268 2692", type: "work" },
     ],
     whatsapp: "94744152966", // his office mobile
-    email: "chiefeng@dpvoffshore.lk",
+    emails: ["chiefeng@dpvoffshore.lk", "chiefeng@dpvoffshore.com"],
     // websites: [{ label: "Website", url: "https://..." }],  // optional override
     // address: {             // optional override of the company address
     //   label: "Colombo Office",

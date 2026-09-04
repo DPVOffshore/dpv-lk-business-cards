@@ -13,6 +13,7 @@ import {
   mapHref,
   addressLine,
   getWebsites,
+  getEmails,
 } from "@/lib/links";
 
 // One icon per row type, kept here so the markup below stays readable.
@@ -50,6 +51,7 @@ const icons = {
 export default function EmployeeCard({ emp, company }) {
   const address = emp.address || company.address;
   const websites = getWebsites(emp, company);
+  const emails = getEmails(emp);
   const phones = (emp.phones || []).filter((p) => p?.number);
 
   const waText = `Hi ${emp.firstName}, I got your contact from your ${company.shortName} card.`;
@@ -138,16 +140,20 @@ export default function EmployeeCard({ emp, company }) {
             </a>
           )}
 
-          {/* Email */}
-          {emp.email && (
-            <a className={styles.row} href={emailHref(emp.email, { mode: company.emailMode })}>
+          {/* Email — one row per address */}
+          {emails.map((address) => (
+            <a
+              key={address}
+              className={styles.row}
+              href={emailHref(address, { mode: company.emailMode })}
+            >
               <span className={styles.ic}>{icons.mail}</span>
               <span className={styles.txt}>
                 <small>Email</small>
-                <span>{emp.email}</span>
+                <span>{address}</span>
               </span>
             </a>
-          )}
+          ))}
 
           {/* Websites */}
           {websites.map((w) => (

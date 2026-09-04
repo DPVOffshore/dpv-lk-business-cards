@@ -1,4 +1,4 @@
-import { webHref, addressLine, getWebsites } from "./links";
+import { webHref, addressLine, getWebsites, getEmails } from "./links";
 
 // vCard 3.0 escaping: backslash, comma, semicolon and newlines.
 const esc = (v = "") =>
@@ -39,7 +39,12 @@ export function buildVCard(emp, company) {
     lines.push(`TEL;TYPE=${types.join(",")}:${tel(p.number)}`);
   });
 
-  if (emp.email) lines.push(`EMAIL;TYPE=INTERNET,WORK:${esc(emp.email)}`);
+  // The first address is marked PREF so phones default to it.
+  getEmails(emp).forEach((address, i) => {
+    const types = ["INTERNET", "WORK"];
+    if (i === 0) types.unshift("PREF");
+    lines.push(`EMAIL;TYPE=${types.join(",")}:${esc(address)}`);
+  });
   websites.forEach((w) => lines.push(`URL:${webHref(w.url)}`));
 
   if (address) {

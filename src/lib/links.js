@@ -26,6 +26,13 @@ export function emailHref(email, { mode = "mailto", subject = "", body = "" } = 
   return `mailto:${email}${q.length ? "?" + q.join("&") : ""}`;
 }
 
+// The emails to show for a person. Accepts either "emails" (a list)
+// or the older single "email", so both spellings keep working.
+export function getEmails(emp) {
+  if (emp?.emails?.length) return emp.emails.filter(Boolean);
+  return emp?.email ? [emp.email] : [];
+}
+
 // The websites to show for a person: their own list if they have
 // one, otherwise the company list. Entries without a url are dropped.
 export function getWebsites(emp, company) {
