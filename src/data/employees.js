@@ -78,11 +78,11 @@ export const employees = [
     credentials: "Major General (Retd)",
     photo: "/employees/ajith.jpg",
     phones: [
-      { label: "Mobile (Office)", number: "+94 74 415 2966", type: "cell" },
+      { label: "Mobile (Office)", number: "+94 74 415 2965", type: "cell" },
       { label: "Mobile", number: "+94 70 248 6055", type: "cell" },
       { label: "Office", number: "+94 11 268 2692", type: "work" },
     ],
-    whatsapp: "94744152966", // his office mobile
+    whatsapp: "94744152965", // his office mobile
     email: "info@dpvoffshore.lk",
   },
 
