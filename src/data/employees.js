@@ -69,6 +69,23 @@ export const employees = [
     email: "cmb@dpvoffshore.com",
   },
 
+  {
+    slug: "ajith",
+    prefix: "Maj. Gen.",
+    firstName: "Ajith",
+    lastName: "Kolambathantri",
+    title: "Senior Manager, HR & Administration",
+    credentials: "Major General (Retd)",
+    photo: "/employees/ajith.jpg",
+    phones: [
+      { label: "Mobile (Office)", number: "+94 74 415 2966", type: "cell" },
+      { label: "Mobile", number: "+94 70 248 6055", type: "cell" },
+      { label: "Office", number: "+94 11 268 2692", type: "work" },
+    ],
+    whatsapp: "94744152966", // his office mobile
+    email: "info@dpvoffshore.lk",
+  },
+
   // ---- copy from here to add a new person ----
   // {
   //   slug: "nimal",
