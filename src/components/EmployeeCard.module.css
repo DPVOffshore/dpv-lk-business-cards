@@ -182,9 +182,33 @@
   stroke-linejoin: round;
 }
 
+/* ---------- Other offices (Dubai) ---------- */
+/* Sits between the person's rows and the Save button. The 20px side
+   margin matches .contacts, so these rows line up with the ones above. */
+.office {
+  margin: 8px 20px 0;
+  padding-top: 14px;
+  padding-bottom: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.officeHead {
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 0 12px;
+}
+
+.officeRows {
+  padding-top: 4px;
+}
+
 /* ---------- Save button ---------- */
 .saveWrap {
-  padding: 14px 20px 22px;
+  padding: 18px 20px 2px;
 }
 .save {
   width: 100%;

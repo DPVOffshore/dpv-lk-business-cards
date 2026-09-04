@@ -89,6 +89,17 @@ export default function EmployeeCard({ emp, company }) {
           <div className={styles.org}>{company.tagline}</div>
         </div>
 
+        {/* Save Contact */}
+        <div className={styles.saveWrap}>
+          <button className={styles.save} onClick={() => downloadVCard(emp, company)}>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z" />
+              <path d="M17 21v-8H7v8M7 3v5h8" />
+            </svg>
+            SAVE CONTACT
+          </button>
+        </div>
+
         {/* Contact rows */}
         <div className={styles.contacts}>
           {/* Every phone number, in the order set in employees.js */}
@@ -178,16 +189,77 @@ export default function EmployeeCard({ emp, company }) {
           )}
         </div>
 
-        {/* Save Contact */}
-        <div className={styles.saveWrap}>
-          <button className={styles.save} onClick={() => downloadVCard(emp, company)}>
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z" />
-              <path d="M17 21v-8H7v8M7 3v5h8" />
-            </svg>
-            SAVE CONTACT
-          </button>
-        </div>
+        {/* Other offices (Dubai). Driven by company.offices — same row
+            styling as above so the section reads as part of the card. */}
+        {(company.offices || []).map((office) => (
+          <section key={office.label} className={styles.office}>
+            <div className={styles.officeHead}>{office.label}</div>
+            <div className={styles.officeRows}>
+              {(office.phones || [])
+                .filter((p) => p?.number)
+                .map((p) => (
+                  <a key={p.number} className={styles.row} href={telHref(p.number)}>
+                    <span className={styles.ic}>
+                      {icons[p.type === "work" ? "work" : "cell"]}
+                    </span>
+                    <span className={styles.txt}>
+                      <small>{p.label}</small>
+                      <span>{p.number}</span>
+                    </span>
+                  </a>
+                ))}
+
+              {office.email && (
+                <a
+                  className={styles.row}
+                  href={emailHref(office.email, { mode: company.emailMode })}
+                >
+                  <span className={styles.ic}>{icons.mail}</span>
+                  <span className={styles.txt}>
+                    <small>Email</small>
+                    <span>{office.email}</span>
+                  </span>
+                </a>
+              )}
+
+              {office.website?.url && (
+                <a
+                  className={styles.row}
+                  href={webHref(office.website.url)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className={styles.ic}>{icons.web}</span>
+                  <span className={styles.txt}>
+                    <small>{office.website.label || "Website"}</small>
+                    <span>{webLabel(office.website.url)}</span>
+                  </span>
+                </a>
+              )}
+
+              {office.address && (
+                <a
+                  className={`${styles.row} ${styles.rowTop}`}
+                  href={mapHref(office.address)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className={styles.ic}>{icons.pin}</span>
+                  <span className={styles.txt}>
+                    <small>{office.address.label || "Address"}</small>
+                    <span>{addressLine(office.address)}</span>
+                    <span className={styles.mapLink}>
+                      Show on map
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M7 17 17 7M8 7h9v9" />
+                      </svg>
+                    </span>
+                  </span>
+                </a>
+              )}
+            </div>
+          </section>
+        ))}
 
         {/* Footer: what DPV does */}
         <div className={styles.footer}>

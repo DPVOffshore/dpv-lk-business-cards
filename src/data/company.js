@@ -11,7 +11,8 @@ export const company = {
   // The first one is also the URL saved into the contact.
   websites: [
     { label: "Website", url: "https://www.dpvoffshore.lk" },
-    { label: "Group website", url: "https://www.dpvoffshore.com" },
+    // The group site (.com) lives in the Dubai Office section below,
+    // so it is deliberately not repeated here.
   ],
 
   logoLockup: "/logo-lockup.png", // mark + wordmark, full colour (light backgrounds)
@@ -31,11 +32,38 @@ export const company = {
     region: "",
     postal: "",
     country: "Sri Lanka",
-    // Tapping "Show on map" opens this link. Replace with a
-    // Google Maps share link for the exact office if you have one.
-    mapUrl:
-      "https://maps.google.com/?q=59/2+Norris+Canal+Road,+Colombo+10,+Sri+Lanka",
+    // Tapping "Show on map" opens this link — the Google Maps share
+    // link for the office's own place listing.
+    mapUrl: "https://maps.app.goo.gl/dgWxmbyTqAF15GJv9",
   },
+
+  // Extra offices. Each one becomes its own section on every card,
+  // under the person's own contact rows. Add another entry here and
+  // a new section appears — no other file needs touching.
+  //   phones / email / website / address are all optional; leave a
+  //   field out and its row is hidden.
+  offices: [
+    {
+      label: "Dubai Office",
+      phones: [
+        { label: "Mobile (UAE)", number: "+971 56 706 0326", type: "cell" },
+        { label: "Mobile (Sri Lanka)", number: "+94 77 774 3023", type: "cell" },
+        { label: "Office", number: "+971 4 580 4314", type: "work" },
+      ],
+      email: "info@dpvoffshore.com",
+      website: { label: "Website", url: "https://www.dpvoffshore.com" },
+      address: {
+        label: "Address",
+        street: "P.O. Box 75287, Workshop 5, #W306",
+        city: "Dubai Maritime City",
+        region: "Dubai",
+        postal: "",
+        country: "UAE",
+        mapUrl:
+          "https://maps.google.com/?q=Workshop+5,+W306,+Dubai+Maritime+City,+Dubai,+UAE",
+      },
+    },
+  ],
 
   // Shown as chips at the bottom of every card.
   services: [
