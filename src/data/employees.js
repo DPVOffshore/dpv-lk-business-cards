@@ -36,7 +36,6 @@ export const employees = [
     photo: "/employees/aruna.jpg",
     phones: [
       { label: "Mobile (Office)", number: "+94 74 415 2966", type: "cell" },
-      { label: "Mobile (Personal)", number: "+94 77 166 0436", type: "cell" },
       { label: "Office", number: "+94 11 268 2692", type: "work" },
     ],
     whatsapp: "94744152966", // his office mobile
@@ -62,10 +61,9 @@ export const employees = [
     photo: "/employees/nethupa.jpg",
     phones: [
       { label: "Mobile (Office)", number: "+94 74 415 2963", type: "cell" },
-      { label: "Mobile", number: "+94 77 531 5354", type: "cell" },
       { label: "Office", number: "+94 11 268 2692", type: "work" },
     ],
-    whatsapp: "94775315354",
+    whatsapp: "94744152963", // his office mobile
     email: "cmb@dpvoffshore.com",
   },
 
@@ -79,7 +77,6 @@ export const employees = [
     photo: "/employees/ajith.jpg",
     phones: [
       { label: "Mobile (Office)", number: "+94 74 415 2965", type: "cell" },
-      { label: "Mobile", number: "+94 70 248 6055", type: "cell" },
       { label: "Office", number: "+94 11 268 2692", type: "work" },
     ],
     whatsapp: "94744152965", // his office mobile
