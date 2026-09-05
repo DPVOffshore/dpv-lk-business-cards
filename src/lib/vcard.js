@@ -20,7 +20,7 @@ export function buildVCard(emp, company) {
     "BEGIN:VCARD",
     "VERSION:3.0",
     `N:${esc(emp.lastName)};${esc(emp.firstName)};;${esc(emp.prefix || "")};`,
-    `FN:${esc([emp.prefix, emp.firstName, emp.lastName].filter(Boolean).join(" "))}`,
+    `FN:${esc(emp.displayName || [emp.prefix, emp.firstName, emp.lastName].filter(Boolean).join(" "))}`,
     `ORG:${esc(company.name)}`,
     `TITLE:${esc(emp.title)}`,
   ];

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import styles from "./EmployeeCard.module.css";
 import { downloadVCard } from "@/lib/vcard";
+import { displayName } from "@/data/employees";
 import { withBasePath } from "@/lib/basePath";
 import {
   telHref,
@@ -83,9 +84,7 @@ export default function EmployeeCard({ emp, company }) {
 
         {/* Identity */}
         <div className={styles.identity}>
-          <h1 className={styles.name}>
-            {emp.firstName} {emp.lastName}
-          </h1>
+          <h1 className={styles.name}>{displayName(emp)}</h1>
           <div className={styles.role}>{emp.title}</div>
           {emp.credentials && <div className={styles.creds}>{emp.credentials}</div>}
           <div className={styles.org}>{company.tagline}</div>

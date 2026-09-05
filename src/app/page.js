@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { employees } from "@/data/employees";
+import { employees, displayName } from "@/data/employees";
 import { company } from "@/data/company";
 import { withBasePath } from "@/lib/basePath";
 import styles from "./page.module.css";
@@ -33,9 +33,7 @@ export default function Home() {
               className={styles.avatar}
             />
             <span className={styles.meta}>
-              <strong>
-                {e.firstName} {e.lastName}
-              </strong>
+              <strong>{displayName(e)}</strong>
               <small>{e.title}</small>
             </span>
             <svg className={styles.chev} viewBox="0 0 24 24" aria-hidden="true">

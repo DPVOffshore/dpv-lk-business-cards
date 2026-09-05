@@ -18,6 +18,10 @@
 //                           saved contact labels the number
 //    - whatsapp: digits only, NO plus, NO spaces  ->  "94771660436"
 //    - prefix:   OPTIONAL honorific ("Mr." / "Ms.") saved into the contact.
+//    - displayName: OPTIONAL. Overrides the headline when the name
+//               needs to read as one line, rank and all, e.g.
+//               "Major General Ajith Kolambathantri (Retd)".
+//               firstName / lastName still drive the saved contact.
 //    - credentials: OPTIONAL qualifications line under the job title.
 //    - email:    OPTIONAL. Leave "" and the email row is hidden.
 //    - emails:   OPTIONAL. Use instead of "email" when someone has
@@ -75,8 +79,9 @@ export const employees = [
     prefix: "Maj. Gen.",
     firstName: "Ajith",
     lastName: "Kolambathantri",
+    displayName: "Major General Ajith Kolambathantri (Retd)",
     title: "Senior Manager, HR & Administration",
-    credentials: "Major General (Retd)",
+    credentials: "",
     photo: "/employees/ajith.jpg",
     phones: [
       { label: "Mobile (Office)", number: "+94 74 415 2965", type: "cell" },
@@ -104,7 +109,13 @@ export const employees = [
   // },
 ];
 
-// Helper used by the pages (no need to touch this).
+// Helpers used by the pages (no need to touch these).
 export function getEmployee(slug) {
   return employees.find((e) => e.slug === slug);
+}
+
+// The name as it should read on screen: "displayName" when set,
+// otherwise first + last.
+export function displayName(emp) {
+  return emp?.displayName || [emp?.firstName, emp?.lastName].filter(Boolean).join(" ");
 }

@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { employees, getEmployee } from "@/data/employees";
+import { employees, getEmployee, displayName } from "@/data/employees";
 import { company } from "@/data/company";
 import EmployeeCard from "@/components/EmployeeCard";
 
@@ -13,7 +13,7 @@ export function generateMetadata({ params }) {
   const emp = getEmployee(params.slug);
   if (!emp) return {};
   return {
-    title: `${emp.firstName} ${emp.lastName} — ${company.shortName}`,
+    title: `${displayName(emp)} — ${company.shortName}`,
     description: `${emp.title}, ${company.name}`,
   };
 }
