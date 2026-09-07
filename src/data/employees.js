@@ -97,8 +97,6 @@ export const employees = [
     lastName: "Gopinath",
     title: "Operations Manager",
     credentials: "",
-    // Placeholder initials until the real headshot arrives — just
-    // overwrite this file with a square photo, same name.
     photo: "/employees/gopinath.jpg",
     phones: [
       { label: "Mobile (India)", number: "+91 93605 29754", type: "cell" },
