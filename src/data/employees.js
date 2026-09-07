@@ -91,6 +91,24 @@ export const employees = [
     email: "info@dpvoffshore.lk",
   },
 
+  {
+    slug: "gopinath",
+    firstName: "R.",
+    lastName: "Gopinath",
+    title: "Operations Manager",
+    credentials: "",
+    // Placeholder initials until the real headshot arrives — just
+    // overwrite this file with a square photo, same name.
+    photo: "/employees/gopinath.jpg",
+    phones: [
+      { label: "Mobile (India)", number: "+91 93605 29754", type: "cell" },
+      { label: "Mobile (Office)", number: "+94 74 415 2251", type: "cell" },
+      { label: "Office", number: "+94 11 268 2692", type: "work" },
+    ],
+    whatsapp: "94744152251", // his office mobile
+    email: "ops1@dpvoffshore.lk",
+  },
+
   // ---- copy from here to add a new person ----
   // {
   //   slug: "nimal",
