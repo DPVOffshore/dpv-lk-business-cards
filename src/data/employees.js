@@ -95,16 +95,33 @@ export const employees = [
     slug: "gopinath",
     firstName: "R.",
     lastName: "Gopinath",
-    title: "Operations Manager",
+    title: "Operation Manager",
     credentials: "",
     photo: "/employees/gopinath.jpg",
     phones: [
-      { label: "Mobile (India)", number: "+91 93605 29754", type: "cell" },
       { label: "Mobile (Office)", number: "+94 74 415 2251", type: "cell" },
+      { label: "Mobile (India)", number: "+91 93605 29754", type: "cell" },
       { label: "Office", number: "+94 11 268 2692", type: "work" },
     ],
     whatsapp: "94744152251", // his office mobile
     email: "ops1@dpvoffshore.lk",
+  },
+
+  {
+    slug: "rohitha",
+    firstName: "Rohitha",
+    lastName: "Perera",
+    title: "Business Partner",
+    credentials: "",
+    // Placeholder initials until a headshot arrives — just overwrite
+    // this file with a square photo, same name.
+    photo: "/employees/rohitha.jpg",
+    phones: [
+      { label: "Mobile", number: "+94 70 342 2714", type: "cell" },
+      { label: "Office", number: "+94 11 268 2692", type: "work" },
+    ],
+    whatsapp: "94703422714",
+    email: "info@dpvoffshore.lk",
   },
 
   // ---- copy from here to add a new person ----
