@@ -135,8 +135,7 @@ export const employees = [
     photo: "/employees/nelusha.jpg",
     phones: [
       { label: "Mobile", number: "+94 76 669 5549", type: "cell" },
-      // TODO: second number (+97...) still to come — add it here, e.g.
-      // { label: "Mobile (UAE)", number: "+971 ...", type: "cell" },
+      { label: "Mobile (UAE)", number: "+971 56 108 2082", type: "cell" },
       { label: "Office", number: "+94 11 268 2692", type: "work" },
     ],
     whatsapp: "94766695549",
