@@ -134,11 +134,11 @@ export const employees = [
     // this file with a square photo, same name.
     photo: "/employees/nelusha.jpg",
     phones: [
-      { label: "Mobile", number: "+94 76 669 5549", type: "cell" },
+      { label: "Mobile", number: "+94 76 669 8967", type: "cell" },
       { label: "Mobile (UAE)", number: "+971 56 108 2082", type: "cell" },
       { label: "Office", number: "+94 11 268 2692", type: "work" },
     ],
-    whatsapp: "94766695549",
+    whatsapp: "94766698967",
     emails: ["logistics@dpvoffshore.lk", "logistics@dpvoffshore.com"],
   },
 
