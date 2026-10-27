@@ -63,7 +63,7 @@ export const employees = [
     slug: "nethupa",
     firstName: "Nethupa",
     lastName: "Binath",
-    title: "Document Controller",
+    title: "Ship Spare Parts Trading",
     credentials: "",
     photo: "/employees/nethupa.jpg",
     phones: [
